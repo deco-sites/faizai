@@ -2,14 +2,22 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { headerHeight } from "./constants.ts";
 
-function NavItem({ item }: { item: SiteNavigationElement }) {
-  const { url, name, children } = item;
+export interface NavItemProps extends SiteNavigationElement {
+  scrollStatus?: boolean;
+}
+
+function NavItem({ item }: { item: NavItemProps }) {
+  const { url, name, children, scrollStatus } = item;
   const image = item?.image?.[0];
 
   return (
     <li class="group flex items-center">
       <a href={url} class="px-4 py-3">
-        <span class="group-hover:underline">
+        <span
+          class={`group-hover:underline ${
+            scrollStatus ? "text-primary" : "text-white"
+          } group-hover/navbar:text-primary text-xl`}
+        >
           {name}
         </span>
       </a>
@@ -17,7 +25,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
       {children && children.length > 0 &&
         (
           <div
-            class="fixed hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
+            class="fixed hidden hover:flex group-hover:flex text-primary bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
             style={{ top: "0px", left: "0px", marginTop: headerHeight }}
           >
             {image?.url && (
