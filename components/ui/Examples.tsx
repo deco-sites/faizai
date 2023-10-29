@@ -1,10 +1,12 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import { asset } from "$fresh/runtime.ts";
 import Icon from "$store/components/ui/Icon.tsx";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 
 export type Balloon = {
   textBalloon: string;
-  imageBalloon: ImageWidget;
+  imageDesktop: ImageWidget;
+  imageMobile: ImageWidget;
 };
 
 export interface Props {
@@ -19,6 +21,7 @@ export interface Props {
 function Examples(
   { title, description, buttonText, image, balloons, url }: Props,
 ) {
+  const lcp = false;
   return (
     <>
       <div class="hidden lg:block border-l-[99vw] max-w-full border-l-transparent border-solid border-t-[10.9vw] border-t-white bg-primary">
@@ -93,62 +96,128 @@ function Examples(
         </div>
 
         {balloons?.map((balloon, index) => (
-          <div class="flex justify-around">
+          <div class="grid">
             {index % 2 == 0
               ? (
                 <>
-                  <div class="relative flex">
-                    <Icon
-                      id="balao"
-                      width={494.2}
-                      height={153.7}
-                      strokeWidth={0.4}
-                    />
-                    <span class="absolute z-10 text-3xl mt-6 pl-4">
-                      {balloon.textBalloon}
-                    </span>
+                  <div class="grid gap-5 justify-items-center md:flex md:justify-around">
+                    <div class="relative flex">
+
+                      <div class="hidden md:block">
+                        <Icon
+                          id="balao"
+                          width={494.2}
+                          height={153.7}
+                          strokeWidth={0.4}
+                        />
+                      </div>
+                      <div class="md:hidden">
+                        <Icon
+                          id="balao"
+                          width={329.5}
+                          height={102.5}
+                          strokeWidth={0.4}
+                        />
+                      </div>
+                      <span class="absolute z-10 text-lg md:text-3xl mt-6 pl-4">
+                        {balloon.textBalloon}
+                      </span>
+                    </div>
+
+                    <Picture preload={lcp}>
+                      <Source
+                        media="(max-width: 767px)"
+                        fetchPriority={lcp ? "high" : "auto"}
+                        src={balloon.imageMobile}
+                        width={307}
+                        height={307}
+                      />
+                      <Source
+                        media="(min-width: 768px)"
+                        fetchPriority={lcp ? "high" : "auto"}
+                        src={balloon.imageDesktop}
+                        width={501}
+                        height={501}
+                      />
+                      <img
+                        class="object-contain"
+                        loading={lcp ? "eager" : "lazy"}
+                        src={balloon.imageDesktop}
+                        alt={""}
+                      />
+                    </Picture>
                   </div>
-                  <img
-                    class="object-center"
-                    src={balloon.imageBalloon}
-                    alt={"Nada"}
-                    width={501}
-                    height={501}
-                  />
                 </>
               )
               : (
                 <>
-                  <div class="relative flex flex-col">
-                    <img
-                      class="object-center"
-                      src={balloon.imageBalloon}
-                      alt={"Nada"}
-                      width={501}
-                      height={501}
-                    />
-                    <div class="flex absoltue">
-                      <Icon
-                        id="linha"
-                        width={155}
-                        height={70}
-                        strokeWidth={0.4}
-                      />
-                      <span class="text-white text-lg">
-                        {"Esse carinha tá disponível na nossa loja :)"}
+                  <div class="grid gap-5 justify-items-center md:flex md:justify-around">
+                      
+                      {/* Speech text mobile*/}
+                      <div class="relative flex md:hidden">
+                        <Icon
+                          id="balao"
+                          width={329.5}
+                          height={102.5}
+                          strokeWidth={0.4}
+                        />
+                        <span class="absolute z-10 text-lg md:text-3xl mt-6 pl-4">
+                        {balloon.textBalloon}
+                        </span>
+                      </div>
+                      
+                      {/* Image */}
+                      <div class="relative grid justify-items-center">
+                        <Picture preload={lcp}>
+                          <Source
+                            media="(max-width: 767px)"
+                            fetchPriority={lcp ? "high" : "auto"}
+                            src={balloon.imageMobile}
+                            width={307}
+                            height={307}
+                          />
+                          <Source
+                            media="(min-width: 768px)"
+                            fetchPriority={lcp ? "high" : "auto"}
+                            src={balloon.imageDesktop}
+                            width={501}
+                            height={501}
+                          />
+                          <img
+                            class="object-contain"
+                            loading={lcp ? "eager" : "lazy"}
+                            src={balloon.imageDesktop}
+                            alt={""}
+                          />
+                        </Picture>
+
+                        {/* Small arrow */}
+                        <div class="flex absoltue">
+                          <Icon
+                            id="linha"
+                            width={155}
+                            height={70}
+                            strokeWidth={0.4}
+                          />
+                          <span class="text-white text-lg">
+                            {"Esse carinha tá disponível na nossa loja :)"}
+                          </span>
+                        </div>
+                      </div>
+
+
+                    {/* Speech text Desktop */}
+                    <div class="hidden md:relative md:flex">
+                        <Icon
+                          id="balao"
+                          width={494.2}
+                          height={153.7}
+                          strokeWidth={0.4}
+                        />
+                      <span class="hidden md:block md:absolute z-10 text-3xl mt-6 pl-4">
+                        {balloon.textBalloon}
                       </span>
                     </div>
-                  </div>
-                  <div class="relative flex">
-                    <Icon
-                      id="balao"
-                      width={494.2}
-                      height={153.7}
-                      strokeWidth={0.4}
-                    />
-                    <span class="absolute z-10 text-3xl mt-6 pl-4">
-                      {balloon.textBalloon}
-                    </span>
                   </div>
                 </>
               )}

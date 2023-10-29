@@ -1,1 +1,1 @@
-export { default } from "$store/islands/HeaderFaiz.tsx";
+export { default } from "$store/components/header/HeaderFaiz.tsx";

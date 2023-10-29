@@ -1,14 +1,11 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Drawers from "$store/islands/Header/Drawers.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { NavItemProps } from "$store/components/header/NavItem.tsx";
 import Alert from "./Alert.tsx";
 import NavbarFaiz from "./NavbarFaiz.tsx";
 import { headerHeight } from "./constants.ts";
-
-import { useSignal } from "@preact/signals";
-import { useEffect } from "preact/hooks";
+import { useUI } from "$store/sdk/useUI.ts";
 
 export interface Props {
   alerts: string[];
@@ -35,16 +32,8 @@ function HeaderFaiz({
   const platform = usePlatform();
   const items = navItems ?? [];
 
-  const scrolled = useSignal(false);
+  const { hasScrolled } = useUI();
 
-  const trackScrolling = () => {
-    scrolled.value = self.scrollY > 40 ? true : false;
-  };
-
-  useEffect(() => {
-    document.addEventListener("scroll", trackScrolling);
-    return () => document.removeEventListener("scroll", trackScrolling);
-  }, []);
   return (
     <>
       <header style={{ height: headerHeight }}>
@@ -55,7 +44,7 @@ function HeaderFaiz({
         >
           <div
             class={`${
-              scrolled.value ? "bg-white" : "bg-transparent"
+              hasScrolled.value ? "bg-white" : "bg-transparent"
             } w-screen transition-colors lg:hover:bg-white group/navbar fixed z-50`}
           >
             <Alert alerts={alerts} />
@@ -63,7 +52,7 @@ function HeaderFaiz({
               items={items}
               searchbar={searchbar && { ...searchbar, platform }}
               logo={logo}
-              scrollStatus={scrolled.value}
+              scrollStatus={hasScrolled.value}
             />
           </div>
         </Drawers>

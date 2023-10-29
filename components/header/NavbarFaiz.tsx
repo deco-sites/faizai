@@ -26,7 +26,7 @@ function NavbarFaiz({ items, searchbar, logo, scrollStatus }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
+        class="md:hidden flex flex-row justify-between items-center w-full pl-2 pr-6 gap-2"
       >
         <MenuButton />
 
