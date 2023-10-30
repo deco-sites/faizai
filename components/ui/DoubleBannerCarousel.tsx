@@ -137,7 +137,7 @@ function Buttons() {
           />
         </Slider.PrevButton>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-4 md:col-start-3 row-start-2">
         <Slider.NextButton class="btn btn-circle glass">
           <Icon
             class="text-base-100"
