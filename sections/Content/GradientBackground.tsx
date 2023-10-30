@@ -54,7 +54,7 @@ export default function GradientBackground({ buttonText, image }: Props) {
                 Você imagina, a gente Faiz
             </div>
             <img
-              class="object-center w-3/4 md:-ml-[52rem] md:-mt-28 md:w-full md:h-full"
+              class="object-center w-3/4 md:-ml-[52rem] md:-mt-28 md:w-1/2"
               src={image}
               alt={"Nada"}
               width={750}
