@@ -13,12 +13,12 @@ export default function StepByStep({ steps, title, buttonText }: Props) {
   return (
     <div class="flex flex-col justify-center items-center gap-20 bg-[url('/image/bg.png')] w-full h-full bg-no-repeat bg-cover bg-center">
       <div class="flex flex-col justify-center w-full items-center gap-24">
-        <div class="pt-14 mt-20 text-white text-5xl font-bold w-1/2 text-center">
+        <div class="pt-14 md:mt-20 text-white text-3xl md:text-5xl font-bold md:w-1/2 text-center">
           {title}
-        </div>
-        <div class="flex items-start justify-around bg-white bg-opacity-80 w-full h-48 ">
+        </div>                           
+        <div class="grid gap-4 md:flex md:items-start md:justify-around bg-white bg-opacity-80 md:w-full md:h-48 ">
           {steps?.map((step, index) => (
-            <div class="flex flex-col items-center justify-center gap-4 w-60 mt-4">
+            <div class="mb-2 pl-2 pr-2 md:mb-0 md:pl-0 md:pr-0 flex flex-col items-center justify-center gap-4 w-60 mt-4">
               <span class="text-primary font-bold text-6xl ">
                 {index + 1}
               </span>
