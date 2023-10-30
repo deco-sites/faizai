@@ -34,10 +34,11 @@ function HeaderFaiz({
   const platform = usePlatform();
   const items = navItems ?? [];
 
-  const rootId = useId()
+  const rootId = useId();
+
   return (
     <>
-      <header style={{ height: headerHeight }}>
+      <header id={rootId} style={{ height: headerHeight }}>
         <Drawers
           menu={{ items }}
           searchbar={searchbar}
@@ -46,7 +47,7 @@ function HeaderFaiz({
           <HeaderClass.HeaderBg
             class="
             bg-transparent
-            w-screen transition-colors lg:hover:bg-white group/navbar fixed z-50"
+            w-screen transition-colors md:hover:bg-white group/navbar fixed z-50"
           >
             <Alert alerts={alerts} />
             <NavbarFaiz
@@ -55,9 +56,10 @@ function HeaderFaiz({
               logo={logo}
               scrollStatus={false}
             />
+            
           </HeaderClass.HeaderBg>
         </Drawers>
-      </header>
+      </header>      
       <HeaderJS rootId={rootId}/>
     </>
   );
