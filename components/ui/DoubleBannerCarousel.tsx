@@ -41,7 +41,7 @@ export interface Props {
   interval?: number;
 }
 
-function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
+function BannerItem({ image, lcp, hidden }: { image: Banner; lcp?: boolean; hidden: boolean }) {
   const {
     alt,
     mobile,
@@ -53,7 +53,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     <a
       href={action?.href ?? "#"}
       aria-label={action?.label}
-      class="relative h-[90vh] overflow-y-hidden w-full"
+      class={`${hidden? "hidden md:block": ""} first-letter:relative h-[90vh] overflow-y-hidden w-full`}
     >
       <Picture preload={lcp}>
         <Source
@@ -164,9 +164,8 @@ function DoubleBannerCarousel(props: Props) {
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
         {images?.map((image, index) => (
           <Slider.Item index={index} class="carousel-item w-full">
-            {image?.map((img, idx) => (
-              <BannerItem image={img} lcp={index === 0 && preload} />
-            ))}
+              <BannerItem image={image[0]} lcp={index === 0 && preload} hidden={false} />
+              <BannerItem image={image[1]} lcp={index === 0 && preload} hidden={true}/>
           </Slider.Item>
         ))}
       </Slider>
