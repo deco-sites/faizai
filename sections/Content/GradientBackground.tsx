@@ -49,16 +49,19 @@ export default function GradientBackground({ buttonText, image }: Props) {
               QUALIDADE RESERVA INK
             </span>
           </div>
-          <div class="flex relative w-full justify-center items-start">
+          <div class="grid justify-items-center md:flex md:relative w-full md:justify-center md:items-start">
+            <div class="block md:hidden text-white font-bold text-3xl">
+                Você imagina, a gente Faiz
+            </div>
             <img
-              class="object-center -ml-[52rem] -mt-28"
+              class="object-center w-3/4 md:-ml-[52rem] md:-mt-28 md:w-full md:h-full"
               src={image}
               alt={"Nada"}
               width={750}
               height={750}
             />
-            <div class="flex flex-col gap-8 absolute justify-center items-center pt-28">
-              <div class=" text-white font-bold text-7xl">
+            <div class="flex flex-col gap-8 md:absolute justify-center items-center pt-10 md:pt-28">
+              <div class="hidden md:block text-white font-bold text-7xl">
                 Você imagina, a gente Faiz
               </div>
 
