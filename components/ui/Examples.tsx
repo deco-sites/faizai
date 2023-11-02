@@ -24,7 +24,7 @@ function Examples(
   const lcp = false;
   return (
     <>
-      <div class="hidden lg:block border-l-[99vw] max-w-full border-l-transparent border-solid border-t-[10.9vw] border-t-white bg-primary">
+      <div id="faizaibot" class="hidden lg:block border-l-[99vw] max-w-full border-l-transparent border-solid border-t-[10.9vw] border-t-white bg-primary">
       </div>
       <div class="flex flex-col gap-32 bg-primary pb-20">
         <div class="flex content-center justify-center

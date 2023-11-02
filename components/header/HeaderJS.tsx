@@ -8,7 +8,8 @@ export interface Props{
 const ATTRIBUTES = {
     "header-bg": "header-bg",
     "nav-logo": "nav-logo",
-    "nav-item": "nav-item"
+    "nav-item": "nav-item",
+    "faizaibot": "faizaibot"
   };
 
 
@@ -18,6 +19,9 @@ const setup = ({ rootId }: Props) => {
     const headerBg = root?.querySelector(`[${ATTRIBUTES["header-bg"]}]`) as HTMLElement;
     const logo = root?.querySelector(`[${ATTRIBUTES["nav-logo"]}]`) as HTMLElement;
     const items = Array.from(root?.querySelectorAll(`[${ATTRIBUTES["nav-item"]}]`) as NodeListOf<HTMLElement> );
+    
+    const faizAiNavItem = items[items.length - 1];
+    console.log(faizAiNavItem);
 
     const onScroll = () => {
         if (window.scrollY > 40){
@@ -33,8 +37,18 @@ const setup = ({ rootId }: Props) => {
         }
     }
 
+    const onClick = () => {
+        document.getElementById("faizaibot")?.scrollIntoView({behavior : "smooth"});
+    }
+
+
+
     document.addEventListener("scroll", onScroll);
-    return () => document.removeEventListener("scroll", onScroll);
+    faizAiNavItem?.addEventListener("click", onClick);
+    return () => {
+        document.removeEventListener("scroll", onScroll);
+        faizAiNavItem?.removeEventListener("click", onClick);
+    }
 }
 
 function HeaderJS({ rootId } : Props){
