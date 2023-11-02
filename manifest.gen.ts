@@ -43,6 +43,7 @@ import * as $$$$$$35 from "./sections/Product/ProductInfo.tsx";
 import * as $$$$$$36 from "./sections/Product/ProductShelfTabbed.tsx";
 import * as $$$$$$37 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$38 from "./sections/Product/ImageGallerySlider.tsx";
+import * as $$$$$$39 from "./sections/Product/CollectionShelf.tsx";
 import * as $$$$$$$$$$$0 from "./apps/site.ts";
 import * as $$$$$$$$$$$1 from "./apps/decohub.ts";
 
@@ -79,6 +80,7 @@ const manifest = {
     "deco-sites/faizai/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$18,
     "deco-sites/faizai/sections/Miscellaneous/CookieConsent.tsx": $$$$$$19,
     "deco-sites/faizai/sections/Newsletter/Newsletter.tsx": $$$$$$20,
+    "deco-sites/faizai/sections/Product/CollectionShelf.tsx": $$$$$$39,
     "deco-sites/faizai/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$33,
     "deco-sites/faizai/sections/Product/ImageGallerySlider.tsx": $$$$$$38,
     "deco-sites/faizai/sections/Product/NotFound.tsx": $$$$$$30,
