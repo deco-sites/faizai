@@ -1,7 +1,7 @@
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { headerHeight } from "./constants.ts";
-
+import NavBarClass from "./NavBarClass.tsx";
 export interface NavItemProps extends SiteNavigationElement {
   scrollStatus?: boolean;
 }
@@ -13,13 +13,13 @@ function NavItem({ item }: { item: NavItemProps }) {
   return (
     <li class="group flex items-center">
       <a href={url} class="px-4 py-3">
-        <span
+        <NavBarClass.Item
           class={`group-hover:underline ${
             scrollStatus ? "text-primary" : "text-white"
           } group-hover/navbar:text-primary text-xl`}
         >
           {name}
-        </span>
+        </NavBarClass.Item>
       </a>
 
       {children && children.length > 0 &&

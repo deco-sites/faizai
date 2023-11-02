@@ -5,7 +5,9 @@ import type { NavItemProps } from "$store/components/header/NavItem.tsx";
 import Alert from "./Alert.tsx";
 import NavbarFaiz from "./NavbarFaiz.tsx";
 import { headerHeight } from "./constants.ts";
-import { useUI } from "$store/sdk/useUI.ts";
+import { useId } from "$store/sdk/useId.ts";
+import HeaderClass from "$store/components/header/HeaderClass.tsx";
+import HeaderJS from "$store/islands/HeaderJS.tsx"
 
 export interface Props {
   alerts: string[];
@@ -32,31 +34,33 @@ function HeaderFaiz({
   const platform = usePlatform();
   const items = navItems ?? [];
 
-  const { hasScrolled } = useUI();
+  const rootId = useId();
 
   return (
     <>
-      <header style={{ height: headerHeight }}>
+      <header id={rootId} style={{ height: headerHeight }}>
         <Drawers
           menu={{ items }}
           searchbar={searchbar}
           platform={platform}
         >
-          <div
-            class={`${
-              hasScrolled.value ? "bg-white" : "bg-transparent"
-            } w-screen transition-colors lg:hover:bg-white group/navbar fixed z-50`}
+          <HeaderClass.HeaderBg
+            class="
+            bg-transparent
+            w-screen transition-colors md:hover:bg-white group/navbar fixed z-50"
           >
             <Alert alerts={alerts} />
             <NavbarFaiz
               items={items}
               searchbar={searchbar && { ...searchbar, platform }}
               logo={logo}
-              scrollStatus={hasScrolled.value}
+              scrollStatus={false}
             />
-          </div>
+            
+          </HeaderClass.HeaderBg>
         </Drawers>
-      </header>
+      </header>      
+      <HeaderJS rootId={rootId}/>
     </>
   );
 }
