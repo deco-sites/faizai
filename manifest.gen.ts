@@ -30,20 +30,21 @@ import * as $$$$$$22 from "./sections/Layout/GridItem.tsx";
 import * as $$$$$$23 from "./sections/Layout/Container.tsx";
 import * as $$$$$$24 from "./sections/Layout/Grid.tsx";
 import * as $$$$$$25 from "./sections/Header/Header.tsx";
-import * as $$$$$$26 from "./sections/Header/HeaderFaiz.tsx";
-import * as $$$$$$27 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$28 from "./sections/Category/CategoryList.tsx";
-import * as $$$$$$29 from "./sections/Category/CategoryBanner.tsx";
-import * as $$$$$$30 from "./sections/Product/NotFound.tsx";
-import * as $$$$$$31 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$32 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$33 from "./sections/Product/ImageGalleryFrontBack.tsx";
-import * as $$$$$$34 from "./sections/Product/NotFoundChallenge.tsx";
-import * as $$$$$$35 from "./sections/Product/ProductInfo.tsx";
-import * as $$$$$$36 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$37 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$38 from "./sections/Product/ImageGallerySlider.tsx";
-import * as $$$$$$39 from "./sections/Product/CollectionShelf.tsx";
+import * as $$$$$$26 from "./sections/Header/HeaderCaroussel.tsx";
+import * as $$$$$$27 from "./sections/Header/HeaderFaiz.tsx";
+import * as $$$$$$28 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$29 from "./sections/Category/CategoryList.tsx";
+import * as $$$$$$30 from "./sections/Category/CategoryBanner.tsx";
+import * as $$$$$$31 from "./sections/Product/NotFound.tsx";
+import * as $$$$$$32 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$33 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$34 from "./sections/Product/ImageGalleryFrontBack.tsx";
+import * as $$$$$$35 from "./sections/Product/NotFoundChallenge.tsx";
+import * as $$$$$$36 from "./sections/Product/ProductInfo.tsx";
+import * as $$$$$$37 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$38 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$39 from "./sections/Product/ImageGallerySlider.tsx";
+import * as $$$$$$40 from "./sections/Product/CollectionShelf.tsx";
 import * as $$$$$$$$$$$0 from "./apps/site.ts";
 import * as $$$$$$$$$$$1 from "./apps/decohub.ts";
 
@@ -53,8 +54,8 @@ const manifest = {
     "deco-sites/faizai/loaders/List/Sections.tsx": $$$1,
   },
   "sections": {
-    "deco-sites/faizai/sections/Category/CategoryBanner.tsx": $$$$$$29,
-    "deco-sites/faizai/sections/Category/CategoryList.tsx": $$$$$$28,
+    "deco-sites/faizai/sections/Category/CategoryBanner.tsx": $$$$$$30,
+    "deco-sites/faizai/sections/Category/CategoryList.tsx": $$$$$$29,
     "deco-sites/faizai/sections/Content/Benefits.tsx": $$$$$$3,
     "deco-sites/faizai/sections/Content/Examples.tsx": $$$$$$4,
     "deco-sites/faizai/sections/Content/Faq.tsx": $$$$$$2,
@@ -65,7 +66,8 @@ const manifest = {
     "deco-sites/faizai/sections/Footer/Footer.tsx": $$$$$$10,
     "deco-sites/faizai/sections/Gallery.tsx": $$$$$$7,
     "deco-sites/faizai/sections/Header/Header.tsx": $$$$$$25,
-    "deco-sites/faizai/sections/Header/HeaderFaiz.tsx": $$$$$$26,
+    "deco-sites/faizai/sections/Header/HeaderCaroussel.tsx": $$$$$$26,
+    "deco-sites/faizai/sections/Header/HeaderFaiz.tsx": $$$$$$27,
     "deco-sites/faizai/sections/Images/BannerGrid.tsx": $$$$$$14,
     "deco-sites/faizai/sections/Images/Carousel.tsx": $$$$$$17,
     "deco-sites/faizai/sections/Images/DoubleCarousel.tsx": $$$$$$13,
@@ -80,19 +82,19 @@ const manifest = {
     "deco-sites/faizai/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$18,
     "deco-sites/faizai/sections/Miscellaneous/CookieConsent.tsx": $$$$$$19,
     "deco-sites/faizai/sections/Newsletter/Newsletter.tsx": $$$$$$20,
-    "deco-sites/faizai/sections/Product/CollectionShelf.tsx": $$$$$$39,
-    "deco-sites/faizai/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$33,
-    "deco-sites/faizai/sections/Product/ImageGallerySlider.tsx": $$$$$$38,
-    "deco-sites/faizai/sections/Product/NotFound.tsx": $$$$$$30,
-    "deco-sites/faizai/sections/Product/NotFoundChallenge.tsx": $$$$$$34,
-    "deco-sites/faizai/sections/Product/ProductInfo.tsx": $$$$$$35,
-    "deco-sites/faizai/sections/Product/ProductShelf.tsx": $$$$$$32,
-    "deco-sites/faizai/sections/Product/ProductShelfTabbed.tsx": $$$$$$36,
-    "deco-sites/faizai/sections/Product/SearchResult.tsx": $$$$$$31,
-    "deco-sites/faizai/sections/Product/Wishlist.tsx": $$$$$$37,
+    "deco-sites/faizai/sections/Product/CollectionShelf.tsx": $$$$$$40,
+    "deco-sites/faizai/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$34,
+    "deco-sites/faizai/sections/Product/ImageGallerySlider.tsx": $$$$$$39,
+    "deco-sites/faizai/sections/Product/NotFound.tsx": $$$$$$31,
+    "deco-sites/faizai/sections/Product/NotFoundChallenge.tsx": $$$$$$35,
+    "deco-sites/faizai/sections/Product/ProductInfo.tsx": $$$$$$36,
+    "deco-sites/faizai/sections/Product/ProductShelf.tsx": $$$$$$33,
+    "deco-sites/faizai/sections/Product/ProductShelfTabbed.tsx": $$$$$$37,
+    "deco-sites/faizai/sections/Product/SearchResult.tsx": $$$$$$32,
+    "deco-sites/faizai/sections/Product/Wishlist.tsx": $$$$$$38,
     "deco-sites/faizai/sections/Social/InstagramPosts.tsx": $$$$$$11,
     "deco-sites/faizai/sections/Social/WhatsApp.tsx": $$$$$$12,
-    "deco-sites/faizai/sections/Theme/Theme.tsx": $$$$$$27,
+    "deco-sites/faizai/sections/Theme/Theme.tsx": $$$$$$28,
   },
   "apps": {
     "deco-sites/faizai/apps/decohub.ts": $$$$$$$$$$$1,

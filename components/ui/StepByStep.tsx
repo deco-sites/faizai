@@ -7,9 +7,10 @@ export interface Props {
   steps: Step[];
   title: string;
   buttonText: string;
+  url: string;
 }
 
-export default function StepByStep({ steps, title, buttonText }: Props) {
+export default function StepByStep({ steps, title, buttonText, url }: Props) {
   return (
     <div class="flex flex-col justify-center items-center gap-20 bg-[url('/image/bg.png')] w-full h-full bg-no-repeat bg-cover bg-center">
       <div class="flex flex-col justify-center w-full items-center gap-24">
@@ -33,6 +34,7 @@ export default function StepByStep({ steps, title, buttonText }: Props) {
         </div>
       </div>
       <a
+        href={url}
         class={"text-lg mb-44 w-52 h-12 py-1 \
             rounded-full bg-white bg-opacity-80 \
             border-solid border-4 border-primary \

@@ -49,11 +49,13 @@ function BannerItem({ image, lcp, hidden }: { image: Banner; lcp?: boolean; hidd
     action,
   } = image;
 
+  // lcp = !hidden && lcp;
+  
   return (
     <a
       href={action?.href ?? "#"}
       aria-label={action?.label}
-      class={`${hidden? "hidden md:block": ""} first-letter:relative h-[90vh] overflow-y-hidden w-full`}
+      class={`${hidden? "hidden md:block": ""} first-letter:relative h-[60vh] md:h-[90vh] overflow-y-hidden w-full`}
     >
       <Picture preload={lcp}>
         <Source

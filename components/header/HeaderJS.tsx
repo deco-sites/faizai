@@ -21,7 +21,6 @@ const setup = ({ rootId }: Props) => {
     const items = Array.from(root?.querySelectorAll(`[${ATTRIBUTES["nav-item"]}]`) as NodeListOf<HTMLElement> );
     
     const faizAiNavItem = items[items.length - 1];
-    console.log(faizAiNavItem);
 
     const onScroll = () => {
         if (window.scrollY > 40){
