@@ -4,9 +4,10 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 export interface Props {
   buttonText: string;
   image: ImageWidget;
+  url: string;
 }
 
-export default function GradientBackground({ buttonText, image }: Props) {
+export default function GradientBackground({ buttonText, image, url }: Props) {
   return (
     <>
       <style>
@@ -66,11 +67,13 @@ export default function GradientBackground({ buttonText, image }: Props) {
               </div>
 
               <a
+                href={url}
                 class={"text-lg mb-12 w-52 h-12 py-1 \
                             rounded-full \
                             border-solid border-4 border-white \
                             text-white font-bold lg:text-xl text-center\
                             hover:scale-110 transition-transform hover:text-primary \
+                            hover:bg-white \
                             "}
               >
                 {buttonText}
