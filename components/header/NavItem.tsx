@@ -3,20 +3,18 @@ import Image from "apps/website/components/Image.tsx";
 import { headerHeight } from "./constants.ts";
 import NavBarClass from "./NavBarClass.tsx";
 export interface NavItemProps extends SiteNavigationElement {
-  scrollStatus?: boolean;
+  id?: string;
 }
 
 function NavItem({ item }: { item: NavItemProps }) {
-  const { url, name, children, scrollStatus } = item;
+  const { url, name, children, id } = item;
   const image = item?.image?.[0];
 
   return (
     <li class="group flex items-center">
-      <a href={url} class="px-4 py-3">
+      <a href={url} id={id? id : ""} class="px-4 py-3">
         <NavBarClass.Item
-          class={`group-hover:underline ${
-            scrollStatus ? "text-primary" : "text-white"
-          } group-hover/navbar:text-primary text-xl`}
+          class={`group-hover:underline text-white group-hover/navbar:text-primary text-xl`}
         >
           {name}
         </NavBarClass.Item>
