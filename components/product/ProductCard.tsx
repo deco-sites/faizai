@@ -71,6 +71,7 @@ function ProductCard(
     offers,
     isVariantOf,
   } = product;
+
   const id = `product-card-${productID}`;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const productGroupID = isVariantOf?.productGroupID;
@@ -79,6 +80,10 @@ function ProductCard(
   const { listPrice, price, installments } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
+
+  const mainUrl = hasVariant ? isVariantOf?.url : url;
+  const mainImage = hasVariant ? isVariantOf?.image?.at(0) : front;
+  const mainName = hasVariant ? isVariantOf?.name : name;
 
   const l = layout;
   const align =
@@ -97,7 +102,7 @@ function ProductCard(
   ));
   const cta = (
     <a
-      href={url && relative(url)}
+      href={mainUrl && relative(mainUrl)}
       aria-label="view product"
       class="btn btn-block"
     >
@@ -168,8 +173,8 @@ function ProductCard(
           class="grid grid-cols-1 grid-rows-1 w-full"
         >
           <Image
-            src={front.url!}
-            alt={front.alternateName}
+            src={mainImage!.url!}
+            alt={mainImage!.alternateName}
             width={WIDTH}
             height={HEIGHT}
             class={`bg-base-100 col-span-full row-span-full rounded w-full ${
@@ -238,7 +243,7 @@ function ProductCard(
               {l?.hide?.productName ? "" : (
                 <h2
                   class="truncate text-base lg:text-lg text-base-content"
-                  dangerouslySetInnerHTML={{ __html: name ?? "" }}
+                  dangerouslySetInnerHTML={{ __html: mainName ?? "" }}
                 />
               )}
               {l?.hide?.productDescription ? "" : (

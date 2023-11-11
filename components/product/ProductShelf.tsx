@@ -32,7 +32,6 @@ function ProductShelf({
 }: Props) {
   const id = useId();
   const platform = usePlatform();
-
   if (!products || products.length === 0) {
     return null;
   }
