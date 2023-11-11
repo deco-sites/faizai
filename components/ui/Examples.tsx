@@ -11,6 +11,7 @@ export type Balloon = {
 
 export interface Props {
   title?: string;
+  /** @format html */
   description?: string;
   buttonText?: string;
   image?: ImageWidget;
@@ -46,13 +47,14 @@ function Examples(
 
                 {description &&
                   (
-                    <span class="text-xl lg:text-3xl text-white w-3/4 lg:w-2/3 text-center">
-                      Que tal gerar
-                      <span class={`text-secondary`}>estampas únicas</span>
-                      com o poder da sua imaginação e da
-                      <span class={`text-secondary`}>
-                        inteligência artificial
-                      </span>
+                    <span class="text-xl lg:text-3xl w-3/4 lg:w-2/3 text-center">
+                      ${description}
+                      {/* Que tal gerar
+                      <span class={`text-[#fca135]`}> estampas únicas </span>
+                      com o poder da sua imaginação e da 
+                      <span class={`text-[#fca135]`}>
+                      &nbsp;inteligência artificial
+                      </span> */}
                     </span>
                   )}
 
