@@ -7,6 +7,7 @@ export type Balloon = {
   textBalloon: string;
   imageDesktop: ImageWidget;
   imageMobile: ImageWidget;
+  altText: string;
 };
 
 export interface Props {
@@ -15,12 +16,13 @@ export interface Props {
   description?: string;
   buttonText?: string;
   image?: ImageWidget;
+  altTextImage?: string;
   balloons: Balloon[];
   url?: string;
 }
 
 function Examples(
-  { title, description, buttonText, image, balloons, url }: Props,
+  { title, description, buttonText, image, altTextImage, balloons, url }: Props,
 ) {
   const lcp = false;
   return (
@@ -66,8 +68,9 @@ function Examples(
                     <div class="lg:hidden relative ">
                       <img
                         class="object-center"
+                        loading={"lazy"}
                         src={image}
-                        alt={"Nada"}
+                        alt={altTextImage}
                         width={956}
                         height={956}
                       />
@@ -82,7 +85,7 @@ function Examples(
                 <img
                   class="object-center"
                   src={image}
-                  alt={"Nada"}
+                  alt={altTextImage}
                   width={956}
                   height={956}
                 />
@@ -136,9 +139,9 @@ function Examples(
                       />
                       <img
                         class="object-contain"
-                        loading={lcp ? "eager" : "lazy"}
+                        loading={"lazy"}
                         src={balloon.imageDesktop}
-                        alt={""}
+                        alt={balloon.altText}
                       />
                     </Picture>
                   </div>
@@ -180,9 +183,9 @@ function Examples(
                           />
                           <img
                             class="object-contain"
-                            loading={lcp ? "eager" : "lazy"}
+                            loading={"lazy"}
                             src={balloon.imageDesktop}
-                            alt={""}
+                            alt={balloon.altText}
                           />
                         </Picture>
 
