@@ -20,6 +20,7 @@ export interface Collection{
 export interface Props {
   collections: Collection[] | null;
   title?: string;
+  /** @format html */
   description?: string;
 }
 
@@ -75,7 +76,7 @@ function CollectionShelf({
         title={title || ""}
         description={description || ""}
         fontSize={"Large"}
-        alignment={"center"}
+        alignment={"left"}
       />
 
       <div
