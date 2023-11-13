@@ -35,7 +35,7 @@ function WrittenBanner({ col } : { col: Collection }){
     const lcp = false;
     return (
         <a
-        href={col.tag && `${col.tag}`}
+        href={col.tag && `/search?q=${col.tag}`}
         aria-label="view collection"
         class="flex w-full relative text-center justify-center items-center overflow-hidden"
         >
