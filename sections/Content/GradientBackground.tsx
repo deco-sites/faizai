@@ -4,10 +4,11 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 export interface Props {
   buttonText: string;
   image: ImageWidget;
+  altTextImage: string;
   url: string;
 }
 
-export default function GradientBackground({ buttonText, image, url }: Props) {
+export default function GradientBackground({ buttonText, image, altTextImage, url }: Props) {
   return (
     <>
       <style>
@@ -57,7 +58,8 @@ export default function GradientBackground({ buttonText, image, url }: Props) {
             <img
               class="object-center w-3/4 md:-ml-[52rem] md:-mt-28 md:w-1/2"
               src={image}
-              alt={"Nada"}
+              alt={altTextImage}
+              loading={"lazy"}
               width={750}
               height={750}
             />
