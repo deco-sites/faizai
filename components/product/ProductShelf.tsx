@@ -15,6 +15,7 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 export interface Props {
   products: Product[] | null;
   title?: string;
+  /** @format html */
   description?: string;
   layout?: {
     headerAlignment?: "center" | "left";
