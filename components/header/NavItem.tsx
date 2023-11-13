@@ -4,17 +4,18 @@ import { headerHeight } from "./constants.ts";
 import NavBarClass from "./NavBarClass.tsx";
 export interface NavItemProps extends SiteNavigationElement {
   id?: string;
+  headerPageType?: string;
 }
 
 function NavItem({ item }: { item: NavItemProps }) {
-  const { url, name, children, id } = item;
+  const { url, name, children, id, headerPageType } = item;
   const image = item?.image?.[0];
 
   return (
     <li class="group flex items-center">
       <a href={url} id={id? id : ""} class="px-4 py-3">
         <NavBarClass.Item
-          class={`group-hover:underline text-white group-hover/navbar:text-primary text-xl`}
+          class={`group-hover:underline ${headerPageType == "home"? "text-white" : "text-primary"} group-hover/navbar:text-primary text-xl`}
         >
           {name}
         </NavBarClass.Item>

@@ -23,6 +23,8 @@ export interface Props {
 
   /** @title Logo */
   logo?: string;
+
+  headerPageType?: string
 }
 
 function HeaderFaiz({
@@ -30,6 +32,7 @@ function HeaderFaiz({
   searchbar,
   navItems,
   logo,
+  headerPageType
 }: Props) {
   const platform = usePlatform();
   const items = navItems ?? [];
@@ -45,22 +48,25 @@ function HeaderFaiz({
           platform={platform}
         >
           <HeaderClass.HeaderBg
-            class="
+            class={`
             bg-transparent
-            w-screen transition-colors md:hover:bg-white group/navbar fixed z-50"
+            w-screen transition-colors ${headerPageType == "home"? "bg-transparent" : "bg-white"} group/navbar fixed z-50`} 
           >
             <Alert alerts={alerts} />
             <NavbarFaiz
               items={items}
               searchbar={searchbar && { ...searchbar, platform }}
               logo={logo}
-              scrollStatus={false}
+              headerPageType={headerPageType}
             />
             
-          </HeaderClass.HeaderBg>
+           </HeaderClass.HeaderBg>
+          
         </Drawers>
-      </header>      
-      <HeaderJS rootId={rootId}/>
+      </header>  
+      { headerPageType == "home" &&
+        <HeaderJS rootId={rootId}/>
+      }    
     </>
   );
 }
