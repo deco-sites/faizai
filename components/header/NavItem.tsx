@@ -14,7 +14,7 @@ function NavItem({ item }: { item: NavItemProps }) {
     <li class="group flex items-center">
       <a href={url} id={id? id : ""} class="px-4 py-3">
         <NavBarClass.Item
-          class={`group-hover:underline text-white group-hover/navbar:text-primary text-xl`}
+          class={`group-hover:underline text-primary text-xl`}
         >
           {name}
         </NavBarClass.Item>

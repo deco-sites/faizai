@@ -47,14 +47,13 @@ function HeaderFaiz({
           <HeaderClass.HeaderBg
             class="
             bg-transparent
-            w-screen transition-colors md:hover:bg-white group/navbar fixed z-50"
+            w-screen transition-colors group/navbar fixed z-50"
           >
             <Alert alerts={alerts} />
             <NavbarFaiz
               items={items}
               searchbar={searchbar && { ...searchbar, platform }}
               logo={logo}
-              scrollStatus={false}
             />
             
           </HeaderClass.HeaderBg>

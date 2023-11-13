@@ -14,11 +14,10 @@ import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import NavBarClass from "$store/components/header/NavBarClass.tsx"
 
-function NavbarFaiz({ items, searchbar, logo, scrollStatus }: {
+function NavbarFaiz({ items, searchbar, logo }: {
   items: NavItemProps[];
   searchbar?: SearchbarProps;
   logo?: string;
-  scrollStatus?: boolean;
 }) {
   const platform = usePlatform();
 
@@ -34,7 +33,7 @@ function NavbarFaiz({ items, searchbar, logo, scrollStatus }: {
         {logo && (
           <a
             href="/"
-            class="flex-grow inline-flex items-center"
+            class="flex-grow inline-flex items-center text-primary"
             style={{ minHeight: navbarHeight }}
             aria-label="Store logo"
           >
@@ -56,8 +55,8 @@ function NavbarFaiz({ items, searchbar, logo, scrollStatus }: {
             <NavBarClass.Logo
               href="/"
               aria-label="Store logo"
-              class={`block px-4 py-3 w-[160px] text-white
-              } group-hover/navbar:text-primary text-4xl font-bold`}
+              class={`block px-4 py-3 w-[160px] text-primary
+              text-4xl font-bold`}
             >
               {logo}
             </NavBarClass.Logo>
@@ -65,7 +64,6 @@ function NavbarFaiz({ items, searchbar, logo, scrollStatus }: {
         </div>
         <div class="flex-auto flex justify-center">
           {items.map((item) => {
-            item.scrollStatus = scrollStatus;
             return <NavItem item={item} />;
           })}
         </div>
