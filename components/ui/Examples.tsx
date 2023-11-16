@@ -7,6 +7,7 @@ export type Balloon = {
   textBalloon: string;
   imageDesktop: ImageWidget;
   imageMobile: ImageWidget;
+  altText: string;
 };
 
 export interface Props {
@@ -15,12 +16,13 @@ export interface Props {
   description?: string;
   buttonText?: string;
   image?: ImageWidget;
+  altTextImage?: string;
   balloons: Balloon[];
   url?: string;
 }
 
 function Examples(
-  { title, description, buttonText, image, balloons, url }: Props,
+  { title, description, buttonText, image, altTextImage, balloons, url }: Props,
 ) {
   const lcp = false;
   return (
@@ -66,8 +68,9 @@ function Examples(
                     <div class="lg:hidden relative ">
                       <img
                         class="object-center"
+                        loading={"lazy"}
                         src={image}
-                        alt={"Nada"}
+                        alt={altTextImage}
                         width={956}
                         height={956}
                       />
@@ -82,7 +85,7 @@ function Examples(
                 <img
                   class="object-center"
                   src={image}
-                  alt={"Nada"}
+                  alt={altTextImage}
                   width={956}
                   height={956}
                 />
@@ -104,6 +107,7 @@ function Examples(
                           width={494.2}
                           height={153.7}
                           strokeWidth={0.4}
+                          flipX={true}
                         />
                       </div>
                       <div class="md:hidden">
@@ -112,9 +116,10 @@ function Examples(
                           width={329.5}
                           height={102.5}
                           strokeWidth={0.4}
+                          flipX={true}
                         />
                       </div>
-                      <span class="absolute z-10 text-lg md:text-3xl mt-6 pl-4">
+                      <span class="absolute self-start z-10 text-lg md:text-3xl mt-2 md:mt-6 pl-4">
                         {balloon.textBalloon}
                       </span>
                     </div>
@@ -136,9 +141,9 @@ function Examples(
                       />
                       <img
                         class="object-contain"
-                        loading={lcp ? "eager" : "lazy"}
+                        loading={"lazy"}
                         src={balloon.imageDesktop}
-                        alt={""}
+                        alt={balloon.altText}
                       />
                     </Picture>
                   </div>
@@ -156,13 +161,13 @@ function Examples(
                           height={102.5}
                           strokeWidth={0.4}
                         />
-                        <span class="absolute z-10 text-lg md:text-3xl mt-6 pl-4">
+                        <span class="absolute self-start z-10 text-lg md:text-3xl mt-2 md:mt-6 pl-4">
                         {balloon.textBalloon}
                         </span>
                       </div>
                       
                       {/* Image */}
-                      <div class="relative grid justify-items-center">
+                      <div class="relative grid">
                         <Picture preload={lcp}>
                           <Source
                             media="(max-width: 767px)"
@@ -180,19 +185,22 @@ function Examples(
                           />
                           <img
                             class="object-contain"
-                            loading={lcp ? "eager" : "lazy"}
+                            loading={"lazy"}
                             src={balloon.imageDesktop}
-                            alt={""}
+                            alt={balloon.altText}
                           />
                         </Picture>
 
                         {/* Small arrow */}
-                        <div class="flex justify-center absoltue">
+                        <div class="md:absolute grid md:flex md:justify-center md:w-full gap-2 md:items-baseline self-end ml-5 md:ml-[26rem] -mt-6 md:mt-0">
                           <Icon
                             id="linha"
-                            width={155}
-                            height={70}
-                            strokeWidth={0.4}
+                            width={77.5}
+                            height={35}
+                            strokeWidth={0.1}
+                            fill={"white"}
+                            class="rotate-45 md:rotate-0"
+                            flipX={true}
                           />
                           <span class="text-white text-lg">
                             {"Esse carinha tá disponível na nossa loja :)"}

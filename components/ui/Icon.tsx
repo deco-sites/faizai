@@ -52,17 +52,21 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
    */
   id: AvailableIcons;
   size?: number;
+  flipX?: boolean
 }
 
 function Icon(
-  { id, strokeWidth = 16, size, width, height, ...otherProps }: Props,
+  { id, strokeWidth = 16, size, width, height, flipX, ...otherProps }: Props,
 ) {
+
+  const addClass = flipX ? "-scale-x-100" : ""
   return (
     <svg
       {...otherProps}
       width={width ?? size}
       height={height ?? size}
       strokeWidth={strokeWidth}
+      class={addClass}
     >
       <use href={asset(`/sprites.svg#${id}`)} />
     </svg>
