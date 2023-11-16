@@ -78,18 +78,22 @@ function NavbarFaiz({ items, searchbar, logo, headerPageType }: {
           >
             <Icon id="User" size={24} strokeWidth={0.4} />
           </a>
-          <a
+
+          { platform === "vtex" &&
+
+            <a
             class="btn btn-circle btn-sm btn-ghost"
             href="/wishlist"
             aria-label="Wishlist"
-          >
+            >
             <Icon
               id="Heart"
               size={24}
               strokeWidth={2}
               fill="none"
-            />
+              />
           </a>
+          }
           {platform === "vtex" && <CartButtonVTEX />}
           {platform === "vnda" && <CartButtonVDNA />}
           {platform === "wake" && <CartButtonWake />}
