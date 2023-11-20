@@ -42,7 +42,8 @@ export type AvailableIcons =
   | "XMark"
   | "Zoom"
   | "balao"
-  | "linha";
+  | "linha"
+  | "reserva_ink";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
