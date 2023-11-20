@@ -61,9 +61,9 @@ function BannerItem({ image, lcp, hidden }: { image: Banner; lcp?: boolean; hidd
         <Source
           media="(max-width: 767px)"
           fetchPriority={lcp ? "high" : "auto"}
-          src={mobile}
-          width={600}
-          height={600}
+          src={hidden? "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" : mobile}
+          width={hidden? 1 : 600}
+          height={hidden? 1 : 600}
         />
         <Source
           media="(min-width: 768px)"
