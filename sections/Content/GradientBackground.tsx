@@ -37,7 +37,7 @@ export default function GradientBackground({ buttonText, image, altTextImage, ur
       <div class="bg-gradient-to-br from-[#ee7752] via-[#e73c7e] to-[#23a6d5] w-full h-full background-animate">
         <div class="flex flex-col items-center gap-16 h-full">
           
-          <div class="flex flex-col md:flex-row justify-center contents-center gap-2 mt-5">
+          <div class="flex flex-col md:flex-row justify-center items-center md:contents-center gap-2 mt-5">
             <svg
               width={30}
               height={30}
