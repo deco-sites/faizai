@@ -88,6 +88,7 @@ function Examples(
                   alt={altTextImage}
                   width={956}
                   height={956}
+                  loading={"lazy"}
                 />
               </div>
             )}
@@ -216,6 +217,7 @@ function Examples(
                           width={494.2}
                           height={153.7}
                           strokeWidth={0.4}
+                          loading={"lazy"}
                         />
                       <span class="hidden md:block md:absolute z-10 text-3xl mt-6 pl-4">
                         {balloon.textBalloon}
