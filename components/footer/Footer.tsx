@@ -4,6 +4,7 @@ import Divider from "$store/components/footer/Divider.tsx";
 import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
 import FooterItems from "$store/components/footer/FooterItems.tsx";
 import Logo from "$store/components/footer/Logo.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 import LogoText from "$store/components/footer/LogoText.tsx";
 import MobileApps from "$store/components/footer/MobileApps.tsx";
 import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
@@ -226,6 +227,13 @@ function Footer({
               {_logo}
               {_sectionLinks}
               {_newsletter}
+              {<Icon
+                    width={100}
+                    height={130}
+                    strokeWidth={1}
+                    id={"reserva_ink"}
+                  />
+              }
             </div>
             <Divider />
             <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
