@@ -1,3 +1,5 @@
+import { asset } from "$fresh/runtime.ts";
+
 export type Step = {
   highligtedText: string;
   text: string;
@@ -12,7 +14,7 @@ export interface Props {
 
 export default function StepByStep({ steps, title, buttonText, url }: Props) {
   return (
-    <div class="flex flex-col justify-center items-center gap-20 bg-[url('/image/bg.png')] w-full h-full bg-no-repeat bg-cover bg-center">
+    <div class={`flex flex-col justify-center items-center gap-20 bg-[${asset('/image/bg.png')}] w-full h-full bg-no-repeat bg-cover bg-center`}>
       <div class="flex flex-col justify-center w-full items-center gap-24">
         <div class="pt-14 md:mt-20 text-white text-3xl md:text-5xl font-bold md:w-1/2 text-center">
           {title}
