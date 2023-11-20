@@ -13,6 +13,7 @@ export type Section = {
 export default function FooterItems(
   { sections, justify = false }: { sections: Section[]; justify: boolean },
 ) {
+  const singleSection = sections.length == 1;
   return (
     <>
       {sections.length > 0 && (
@@ -29,7 +30,7 @@ export default function FooterItems(
                   <span class="font-medium text-lg">
                     {section.label}
                   </span>
-                  <ul class={`flex flex-col gap-2 flex-wrap text-sm`}>
+                  <ul class={`flex ${singleSection? "flex-row" : "flex-col"} gap-3 flex-wrap text-sm`}>
                     {section.items?.map((item) => (
                       <li>
                         <a href={item.href} class="block py-1 link link-hover">
