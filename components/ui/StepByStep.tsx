@@ -7,7 +7,10 @@ export type Step = {
 };
 
 export interface Props {
-  bgImage: ImageWidget;
+  bgImage: {
+    bgSrc: ImageWidget;
+    bgAlt: string;
+  };
   steps: Step[];
   title: string;
   buttonText: string;
@@ -20,7 +23,8 @@ export default function StepByStep({ bgImage, steps, title, buttonText, url }: P
       <img
         class="object-cover object-center w-full h-[135svh] md:h-[90svh]"
         loading="lazy"
-        src={bgImage}
+        src={bgImage.bgSrc}
+        alt={bgImage.bgAlt}
       />
       <div class={`absolute flex flex-col justify-center items-center gap-20 w-full`}>
         <div class="flex flex-col justify-center w-full items-center gap-24">
