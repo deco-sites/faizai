@@ -224,16 +224,38 @@ function Footer({
         {(!layout?.variation || layout?.variation == "Variation 1") && (
           <div class="flex flex-col gap-10">
             <div class="flex flex-col md:flex-row md:items-end md:flex-wrap lg:flex-nowrap gap-8 md:gap-10 lg:gap-12">
-              {_logo}
+              {/* Mobile */}
+              <div class="flex gap-4 md:hidden items-end">
+                {_logo}
+                {<Icon
+                      width={100}
+                      height={100}
+                      strokeWidth={1}
+                      id={"reserva_ink"}
+                    />
+                }
+              </div>
+
+              {/* Desktop */}
+              <div class="hidden md:block">
+                {_logo}
+              </div>
+
+
+              {/* Both Mobile and Desktop */}
               {_sectionLinks}
               {_newsletter}
-              {<Icon
-                    width={100}
-                    height={130}
-                    strokeWidth={1}
-                    id={"reserva_ink"}
-                  />
-              }
+
+              {/* Desktop */}
+              <div class="hidden md:block">
+                {<Icon
+                      width={100}
+                      height={100}
+                      strokeWidth={1}
+                      id={"reserva_ink"}
+                    />
+                }
+              </div>
             </div>
             <Divider />
             <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
