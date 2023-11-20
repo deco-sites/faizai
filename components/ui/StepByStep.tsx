@@ -17,7 +17,7 @@ export default function StepByStep({ steps, title, buttonText, url }: Props) {
         <div class="pt-14 md:mt-20 text-white text-3xl md:text-5xl font-bold md:w-1/2 text-center">
           {title}
         </div>                           
-        <div class="grid gap-4 md:flex md:items-start md:justify-around bg-white bg-opacity-80 md:w-full md:h-48 ">
+        <div class="grid gap-4 md:flex md:items-start md:justify-around bg-white rounded md:rounded-none bg-opacity-80 md:w-full md:h-48 ">
           {steps?.map((step, index) => (
             <div class="mb-2 pl-2 pr-2 md:mb-0 md:pl-0 md:pr-0 flex flex-col items-center justify-center gap-4 w-60 mt-4">
               <span class="text-primary font-bold text-6xl ">
