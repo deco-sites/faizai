@@ -4,6 +4,7 @@ import Divider from "$store/components/footer/Divider.tsx";
 import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
 import FooterItems from "$store/components/footer/FooterItems.tsx";
 import Logo from "$store/components/footer/Logo.tsx";
+import LogoText from "$store/components/footer/LogoText.tsx";
 import MobileApps from "$store/components/footer/MobileApps.tsx";
 import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
 import RegionSelector from "$store/components/footer/RegionSelector.tsx";
@@ -84,7 +85,7 @@ export interface Layout {
 
 export interface Props {
   logo?: {
-    image: ImageWidget;
+    title: string;
     description?: string;
   };
   newsletter?: {
@@ -179,7 +180,7 @@ function Footer({
     },
   },
 }: Props) {
-  const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
+  const _logo = layout?.hide?.logo ? <></> : <LogoText logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
     <Newsletter
       content={newsletter}
@@ -221,7 +222,7 @@ function Footer({
       <div class="lg:container mx-6 lg:mx-auto">
         {(!layout?.variation || layout?.variation == "Variation 1") && (
           <div class="flex flex-col gap-10">
-            <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
+            <div class="flex flex-col md:flex-row md:items-end md:flex-wrap lg:flex-nowrap gap-8 md:gap-10 lg:gap-12">
               {_logo}
               {_sectionLinks}
               {_newsletter}
