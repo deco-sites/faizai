@@ -23,7 +23,7 @@ function VariantSelector({ product }: Props) {
 
               return (
                 <li>
-                  <button {...partial}>
+                  <a href={link}>
                     <Avatar
                       content={value}
                       variant={link === url
@@ -32,7 +32,7 @@ function VariantSelector({ product }: Props) {
                         ? "default"
                         : "disabled"}
                     />
-                  </button>
+                  </a>
                 </li>
               );
             })}
