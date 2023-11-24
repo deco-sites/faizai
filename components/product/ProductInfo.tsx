@@ -73,13 +73,17 @@ function ProductInfo({ page, layout }: Props) {
             </span>
           )}
         </div>
-        <h1>
+        <h1 class ="grid gap-1">
           <span class="font-medium text-xl capitalize">
-            {layout?.name === "concat"
+            {/* {layout?.name === "concat"
               ? `${isVariantOf?.name} ${name}`
               : layout?.name === "productGroup"
               ? isVariantOf?.name
-              : name}
+              : name} */}
+              {isVariantOf?.name}
+          </span>
+          <span class="font-medium text-lg capitalize">
+            {name}
           </span>
         </h1>
       </div>
