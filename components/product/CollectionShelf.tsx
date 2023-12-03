@@ -51,7 +51,7 @@ function WrittenBanner({ col } : { col: Collection }){
                 loading={lcp ? "eager" : "lazy"}
                 decoding="async"
             />
-            <span class="absolute text-center text-white text-3xl">{col.title}</span>
+            <span class="absolute text-center font-extrabold text-white text-4xl">{col.title}</span>
         </a>
     )
 
