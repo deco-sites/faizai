@@ -36,7 +36,6 @@ const variants = {
 };
 
 function Avatar({ content, variant = "default" }: Props) {
-  console.log(content, variant);
   const isGender = content.length > 2 && !colors[content.toLowerCase()];
   return (
     <div class="avatar placeholder text-xs">
