@@ -5,7 +5,7 @@
 
 const colors: Record<string, string> = {
   "azul-clara": "bg-[#87CEFA] ring-[#87CEFA]",
-  "azul-marinho": "bg-[#000080] ring-[#000080]",
+  "marinho": "bg-[#151c2b] ring-[#151c2b]",
   "branca": "bg-[#FFFFFF] ring-[#FFFFFF]",
   "cinza": "bg-[#808080] ring-[#808080]",
   "cinza-escura": "bg-[#A9A9A9] ring-[#A9A9A9]",
@@ -13,7 +13,9 @@ const colors: Record<string, string> = {
   "marrom": "bg-[#A52A2A] ring-[#A52A2A]",
   "preta": "bg-[#161616] ring-[#161616]",
   "verde-clara": "bg-[#90EE90] ring-[#90EE90]",
-  "vermelha": "bg-[#FF0000] ring-[#FF0000]",
+  "vermelho": "bg-[#FF0000] ring-[#FF0000]",
+  "amarelo": "bg-[#ce8c24] ring-[#ce8c24]",
+  "verde" : "bg-[#02311b] ring-[#02311b]",
 
   // Color variants - only applied when no color as content is passed
   "active": "bg-neutral-focus text-neutral-content ring-neutral-focus ",
@@ -34,15 +36,17 @@ const variants = {
 };
 
 function Avatar({ content, variant = "default" }: Props) {
+  console.log(content, variant);
+  const isGender = content.length > 2 && !colors[content.toLowerCase()];
   return (
     <div class="avatar placeholder text-xs">
       <div
-        class={`rounded-full w-8 h-8 ${colors[content] ?? colors[variant]} ${
+        class={` ${isGender ? "rounded-lg h-7 w-20" : "rounded-full w-8 h-8"} ${colors[content.toLowerCase()] ?? colors[variant]} ${
           variants[variant]
         }`}
       >
-        <span class="uppercase">
-          {colors[content] ? "" : content.substring(0, 2)}
+        <span class="">
+          {colors[content.toLowerCase()] ? "" : isGender ? content[0] + content.slice(1).toLowerCase() : content.substring(0, 2)}
         </span>
       </div>
     </div>
