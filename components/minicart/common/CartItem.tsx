@@ -42,7 +42,7 @@ function CartItem(
   }: Props,
 ) {
   const { image, name, price: { sale, list }, quantity } = item;
-  const isGift = sale < 0.01;
+  const isSale = sale != 0;
   const [loading, setLoading] = useState(false);
 
   const withLoading = useCallback(
@@ -76,7 +76,7 @@ function CartItem(
         <div class="flex justify-between items-center">
           <span>{name}</span>
           <Button
-            disabled={loading || isGift}
+            disabled={loading}
             loading={loading}
             class="btn-ghost btn-square"
             onClick={withLoading(async () => {
@@ -93,17 +93,20 @@ function CartItem(
             <Icon id="Trash" size={24} />
           </Button>
         </div>
+        
         <div class="flex items-center gap-2">
-          <span class="line-through text-base-300 text-sm">
+          <span class={` ${isSale ? "line-through text-base-300 text-sm" : "text-sm text-secondary" } `}>
             {formatPrice(list, currency, locale)}
           </span>
-          <span class="text-sm text-secondary">
-            {isGift ? "Grátis" : formatPrice(sale, currency, locale)}
-          </span>
+            { isSale &&
+              <span class="text-sm text-secondary">
+                {formatPrice(sale, currency, locale)}
+              </span>
+            }
         </div>
 
         <QuantitySelector
-          disabled={loading || isGift}
+          disabled={loading}
           quantity={quantity}
           onChange={withLoading(async (quantity) => {
             const analyticsItem = itemToAnalyticsItem(index);
