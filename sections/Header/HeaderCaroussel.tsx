@@ -15,9 +15,9 @@ function HeaderCaroussel ({header,carousel, headlineText, subText}: Props){
         <div class="absolute top-0">
             {renderSection(header, 0)}
         </div>
-        <div class="hidden md:flex flex-col absolute justify-center w-[32rem] place-self-center ml-[38vw] -mt-60	" >
-          <span class="text-white font-extrabold text-5xl">{headlineText}</span>
-          <span class="text-white text-3xl">{subText}</span>
+        <div class="hidden md:flex flex-col absolute justify-center w-[32rem] 2xl:w-[45rem] place-self-center ml-[38vw] -mt-60	" >
+          <span class="text-white font-extrabold md:text-5xl 2xl:text-6xl">{headlineText}</span>
+          <span class="text-white md:text-3xl 2xl:text-4xl">{subText}</span>
         </div>
     </div>
   )
