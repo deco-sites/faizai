@@ -21,7 +21,7 @@ export default function StepByStep({ bgImage, steps, title, buttonText, url }: P
   return (
     <div class="relative flex">
       <img
-        class="object-cover object-center w-full h-[135svh] md:h-[90svh]"
+        class="object-cover object-center w-full h-[75rem] md:h-[50rem]"
         loading="lazy"
         src={bgImage.bgSrc}
         alt={bgImage.bgAlt}
