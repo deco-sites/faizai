@@ -40,7 +40,8 @@ const setup = ({ rootId }: Props) => {
         
     }
 
-    const onClick = () => {
+    const onClick = (event: MouseEvent) => {
+        event.preventDefault()
         document.getElementById("faizaibot")?.scrollIntoView({behavior : "smooth"});
     }
 
