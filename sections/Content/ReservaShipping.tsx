@@ -4,25 +4,30 @@ import type { SectionProps } from "deco/mod.ts";
 
 export interface Props {
     cep: string;
+    product?: string
 }
 
 
 export async function loader(
-    { cep } : Props,
+    { cep, product } : Props,
     _req: Request,
   ) {
-    const token = (await fetch(
-      `https://reserva.ink/301744/product/moto-modernista`,
+    const { token, specs } = (await fetch(
+      `https://reserva.ink/301744/product/${product ?? 'moto-modernista'}`,
     ).then((r) => r.text())
      .then( (r) => {
-        return r.match('input type="hidden" name="authenticity_token" value="([^"]*)"')![1];
+       const token = r.match('input type="hidden" name="authenticity_token" value="([^"]*)"')![1];
+       const specs = r.match('product_shipping" value="([^"]*)"')![1]!.replaceAll('&quot;', '"');
+       console.log(specs)
+        return { token, specs }
      }));
 
     const data = {
         'authenticity_token':token,
         'calculate_shipping[cep]': cep,
-        'product_shipping':'[{"product_id":691392,"price":"119.9","weight":"0.3","height":"7.0","width":"40.0","length":"30.0","sku":"007975031201"}]',
+        'product_shipping':specs,
     }
+
 
     const htmlResult = (await fetch(
         'https://reserva.ink/stores/calculate_shipping',
@@ -35,12 +40,13 @@ export async function loader(
         }
     ).then ((r) => r.text())
     );
-    return { token, htmlResult };
+    console.log(htmlResult);
+    return { htmlResult };
 }
 
 
   export default function ReservaShipping(
-    { token, htmlResult } : SectionProps<typeof loader>,
+    { htmlResult } : SectionProps<typeof loader>,
   ) {
     const days = htmlResult.match('Entrega Padrão até (.*) dias úteis');
 
