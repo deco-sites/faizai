@@ -14,6 +14,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import type { PropertyValue } from "apps/commerce/types.ts";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -29,11 +30,10 @@ interface Props {
 
 function ProductInfo({ page, layout }: Props) {
   const platform = usePlatform();
-
+  
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
   }
-
   const {
     breadcrumbList,
     product,
@@ -47,7 +47,10 @@ function ProductInfo({ page, layout }: Props) {
     isVariantOf,
     additionalProperty = [],
   } = product;
-  const description = product.description || isVariantOf?.description;
+
+  const descriptionHtml = additionalProperty.find(o => o['name'] == "descriptionHtml")?.value;
+  const description =  product.description || isVariantOf?.description;
+
   const {
     price = 0,
     listPrice,
@@ -195,7 +198,7 @@ function ProductInfo({ page, layout }: Props) {
               <summary class="cursor-pointer">Descrição</summary>
               <div
                 class="ml-2 mt-2"
-                dangerouslySetInnerHTML={{ __html: description }}
+                dangerouslySetInnerHTML={{ __html: descriptionHtml ?? description }}
               />
             </details>
           )}

@@ -28,15 +28,20 @@ function Notify({ productID }: Props) {
   };
 
   return (
-    <form class="form-control justify-start gap-2" onSubmit={handleSubmit}>
-      <span class="text-base">Este produto está indisponivel no momento</span>
-      <span class="text-sm">Avise-me quando estiver disponivel</span>
+    // <form class="form-control justify-start gap-2" onSubmit={handleSubmit}>
+    //   <span class="text-base">Este produto está indisponivel no momento</span>
+    //   <span class="text-sm">Avise-me quando estiver disponivel</span>
 
-      <input placeholder="Nome" class="input input-bordered" name="name" />
-      <input placeholder="Email" class="input input-bordered" name="email" />
+    //   <input placeholder="Nome" class="input input-bordered" name="name" />
+    //   <input placeholder="Email" class="input input-bordered" name="email" />
 
-      <button class="btn disabled:loading" disabled={loading}>Enviar</button>
-    </form>
+    //   <button class="btn disabled:loading" disabled={loading}>Enviar</button>
+    // </form>
+    <div class="flex flex-col gap-4 sm:mt-10 w-72">
+      <span>Pedimos desculpas, mas este produto está indisponivel no momento</span>
+      <button class="btn" disabled={true}>Adicionar à sacola</button>
+
+    </div>
   );
 }
 
