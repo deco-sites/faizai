@@ -1,12 +1,9 @@
-import { SendEventOnLoad } from "$store/components/Analytics.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "$store/sdk/useId.ts";
-import { useOffer } from "$store/sdk/useOffer.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
-import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
@@ -33,27 +30,29 @@ const WIDTH = 200;
 const HEIGHT = 279;
 
 function WrittenBanner({ col } : { col: Collection }){
-    const lcp = false;
-    return (
-        <a
-        href={col.tag && `/search?q=${col.tag}`}
-        aria-label="view collection"
-        class="flex w-full relative text-center justify-center items-center overflow-hidden"
-        >
-            <Image
-                src={col.image}
-                alt={col.title}
-                width={WIDTH}
-                height={HEIGHT}
-                class={`bg-base-100 rounded blur-[1px] w-full object-contain duration-100 transition-scale scale-100 md:hover:scale-110`}
-                sizes="(max-width: 640px) 50vw, 20vw"
-                preload={lcp}
-                loading={lcp ? "eager" : "lazy"}
-                decoding="async"
-            />
-            <span class="absolute text-center font-extrabold text-white text-4xl">{col.title}</span>
-        </a>
-    )
+  const lcp = false;
+  return (
+      <a
+      href={col.tag && `/search?q=${col.tag}`}
+      aria-label="view collection"
+      class="flex w-full relative text-center justify-center items-center overflow-hidden"
+      >
+          <Image
+              src={col.image}
+              alt={col.title}
+              width={WIDTH}
+              height={HEIGHT}
+              class={`bg-base-100 rounded w-full object-contain duration-100 transition-scale scale-100 md:hover:scale-110`}
+              sizes="(max-width: 640px) 50vw, 20vw"
+              preload={lcp}
+              loading={lcp ? "eager" : "lazy"}
+              decoding="async"
+          />
+          <div class="absolute bg-black bg-opacity-40 rounded-lg p-4">
+            <span class="text-center font-extrabold text-white text-4xl">{col.title}</span>
+          </div>
+      </a>
+  )
 
 }
 
