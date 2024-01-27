@@ -3,7 +3,7 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
-import * as $$$1 from "./loaders/ReservaShipping.tsx";
+import * as $$$1 from "./loaders/ReservaShipping.ts";
 import * as $$$2 from "./loaders/List/Sections.tsx";
 import * as $$$$$$0 from "./sections/Content/GradientBackground.tsx";
 import * as $$$$$$1 from "./sections/Content/Testimonials.tsx";
@@ -53,7 +53,7 @@ const manifest = {
   "loaders": {
     "deco-sites/faizai/loaders/Layouts/ProductCard.tsx": $$$0,
     "deco-sites/faizai/loaders/List/Sections.tsx": $$$2,
-    "deco-sites/faizai/loaders/ReservaShipping.tsx": $$$1,
+    "deco-sites/faizai/loaders/ReservaShipping.ts": $$$1,
   },
   "sections": {
     "deco-sites/faizai/sections/Category/CategoryBanner.tsx": $$$$$$30,
