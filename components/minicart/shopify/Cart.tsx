@@ -36,7 +36,7 @@ function Cart() {
       locale={locale}
       currency={currency}
       loading={loading.value}
-      freeShippingTarget={199}
+      freeShippingTarget={0}
       checkoutHref={checkoutHref}
       coupon={coupon}
       onAddCoupon={(text) => addCouponsToCart({ discountCodes: [text] })}

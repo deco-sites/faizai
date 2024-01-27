@@ -14,7 +14,7 @@ export default function ReservaShipping() {
           loading.value = true;
           const cep =
             (e.currentTarget.elements.namedItem("cep") as RadioNodeList)?.value;
-          estimateResult.value = await invoke["deco-sites/faizai"].loaders.ReservaShipping({"cep" : cep})
+          estimateResult.value = await invoke["deco-sites/faizai"].loaders.ReservaShipping({"cep" : cep}) || ""
         } catch {
             estimateResult.value = "Erro ao estimar frete";
         } finally {
@@ -41,8 +41,13 @@ export default function ReservaShipping() {
                 </div>
 
                 { (estimateResult.value != "") &&
-                    <div class="text-primary">
-                        {estimateResult.value}
+                    <div class="flex flex-col">
+                        <span class="text-primary">
+                            Entrega 
+                            <span class="text-[#FCA135]"> Grátis</span>
+                            <span class="text-primary"> !</span>
+                        </span>
+                        <span class="text-primary">{estimateResult.value}</span>
                     </div>
 
                 }
