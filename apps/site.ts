@@ -8,6 +8,7 @@ import { Section } from "deco/blocks/section.ts";
 import { App } from "deco/mod.ts";
 import { rgb24 } from "std/fmt/colors.ts";
 import manifest, { Manifest } from "../manifest.gen.ts";
+import { AppContext as AC } from "deco/mod.ts";
 
 export type Props = {
   /**
@@ -70,5 +71,7 @@ export default function Site(
     ],
   };
 }
+
+export type AppContext = AC<ReturnType<typeof Site>>
 
 export { onBeforeResolveProps } from "apps/website/mod.ts";
