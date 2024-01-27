@@ -15,6 +15,8 @@ import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import type { PropertyValue } from "apps/commerce/types.ts";
+import ReservaShipping from "$store/islands/ReservaShipping.tsx"
+
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -190,8 +192,13 @@ function ProductInfo({ page, layout }: Props) {
           />
         )}
       </div>
+      {/* ReservaShipping */}
+      <ReservaShipping/>
+      <div>
+
+      </div>
       {/* Description card */}
-      <div class="mt-4 sm:mt-6">
+      <div class="mt-4 sm:mt-6 pb-4">
         <span class="text-sm">
           {description && (
             <details>

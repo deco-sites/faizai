@@ -3,7 +3,8 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
-import * as $$$1 from "./loaders/List/Sections.tsx";
+import * as $$$1 from "./loaders/ReservaShipping.tsx";
+import * as $$$2 from "./loaders/List/Sections.tsx";
 import * as $$$$$$0 from "./sections/Content/GradientBackground.tsx";
 import * as $$$$$$1 from "./sections/Content/Testimonials.tsx";
 import * as $$$$$$2 from "./sections/Content/Faq.tsx";
@@ -45,13 +46,15 @@ import * as $$$$$$37 from "./sections/Product/ProductShelfTabbed.tsx";
 import * as $$$$$$38 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$39 from "./sections/Product/ImageGallerySlider.tsx";
 import * as $$$$$$40 from "./sections/Product/CollectionShelf.tsx";
+import * as $$$$$$$$$0 from "./actions/ReservaShippingAction.tsx";
 import * as $$$$$$$$$$$0 from "./apps/site.ts";
 import * as $$$$$$$$$$$1 from "./apps/decohub.ts";
 
 const manifest = {
   "loaders": {
     "deco-sites/faizai/loaders/Layouts/ProductCard.tsx": $$$0,
-    "deco-sites/faizai/loaders/List/Sections.tsx": $$$1,
+    "deco-sites/faizai/loaders/List/Sections.tsx": $$$2,
+    "deco-sites/faizai/loaders/ReservaShipping.tsx": $$$1,
   },
   "sections": {
     "deco-sites/faizai/sections/Category/CategoryBanner.tsx": $$$$$$30,
@@ -95,6 +98,9 @@ const manifest = {
     "deco-sites/faizai/sections/Social/InstagramPosts.tsx": $$$$$$11,
     "deco-sites/faizai/sections/Social/WhatsApp.tsx": $$$$$$12,
     "deco-sites/faizai/sections/Theme/Theme.tsx": $$$$$$28,
+  },
+  "actions": {
+    "deco-sites/faizai/actions/ReservaShippingAction.tsx": $$$$$$$$$0,
   },
   "apps": {
     "deco-sites/faizai/apps/decohub.ts": $$$$$$$$$$$1,
