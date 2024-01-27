@@ -201,7 +201,7 @@ function ProductInfo({ page, layout }: Props) {
       <div class="mt-4 sm:mt-6 pb-4">
         <span class="text-sm">
           {description && (
-            <details>
+            <details open>
               <summary class="cursor-pointer">Descrição</summary>
               <div
                 class="ml-2 mt-2"
