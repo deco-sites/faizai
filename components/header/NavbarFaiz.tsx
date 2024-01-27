@@ -34,7 +34,7 @@ function NavbarFaiz({ items, searchbar, logo, headerPageType }: {
         {logo && (
           <a
             href="/"
-            class="flex-grow inline-flex items-center"
+            class="flex-grow inline-flex items-center text-xl font-bold"
             style={{ minHeight: navbarHeight }}
             aria-label="Store logo"
           >
