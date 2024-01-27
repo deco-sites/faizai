@@ -4,10 +4,10 @@ export interface Props {
 }
 
 
-export async function loader(
+export default async function loader(
     { cep, product } : Props,
     _req: Request,
-  ) {
+  ) : Promise< string | null > {
     const { token, specs } = (await fetch(
       `https://reserva.ink/301744/product/${product ?? 'moto-modernista'}`,
     ).then((r) => r.text())
@@ -38,5 +38,5 @@ export async function loader(
     );
     const days = htmlResult.match('mt-2">\n(.*)\n(.*)\n(.*)\n');
     const result = days![1] + days![2] + days![3];
-    return { result };
+    return result ;
 }

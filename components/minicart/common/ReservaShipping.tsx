@@ -2,7 +2,6 @@ import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
 import type { JSX } from "preact";
 
-
 export default function ReservaShipping() {
 
     const loading = useSignal(false);
@@ -13,11 +12,9 @@ export default function ReservaShipping() {
     
         try {
           loading.value = true;
-    
           const cep =
             (e.currentTarget.elements.namedItem("cep") as RadioNodeList)?.value;
-    
-          estimateResult.value = await invoke["deco-sites/faizai"].actions.ReservaShippingAction({ "cep": cep });
+          estimateResult.value = await invoke["deco-sites/faizai"].loaders.ReservaShipping({"cep" : cep})
         } catch {
             estimateResult.value = "Erro ao estimar frete";
         } finally {

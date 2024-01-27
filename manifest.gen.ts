@@ -46,7 +46,6 @@ import * as $$$$$$37 from "./sections/Product/ProductShelfTabbed.tsx";
 import * as $$$$$$38 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$39 from "./sections/Product/ImageGallerySlider.tsx";
 import * as $$$$$$40 from "./sections/Product/CollectionShelf.tsx";
-import * as $$$$$$$$$0 from "./actions/ReservaShippingAction.tsx";
 import * as $$$$$$$$$$$0 from "./apps/site.ts";
 import * as $$$$$$$$$$$1 from "./apps/decohub.ts";
 
@@ -98,9 +97,6 @@ const manifest = {
     "deco-sites/faizai/sections/Social/InstagramPosts.tsx": $$$$$$11,
     "deco-sites/faizai/sections/Social/WhatsApp.tsx": $$$$$$12,
     "deco-sites/faizai/sections/Theme/Theme.tsx": $$$$$$28,
-  },
-  "actions": {
-    "deco-sites/faizai/actions/ReservaShippingAction.tsx": $$$$$$$$$0,
   },
   "apps": {
     "deco-sites/faizai/apps/decohub.ts": $$$$$$$$$$$1,
